@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Remote = function () {
+        this.channel = 0;
+        this.volume = 0;
+
+        this.getChannel = function () {
+            return this.channel;
+        }
+        this.setChannel = function (channel) {
+            this.channel = channel;
+        }
+        this.getVolume = function () {
+            return this.volume;
+        }
+        this.setVolume = function (volume) {
+            this.volume = volume;
+        }
+    }
+
+    let Tivi = function (channel, volume) {
+        this.channel = channel;
+        this.volume = volume;
+
+        this.getChannel = function () {
+            return this.channel;
+        }
+        this.setChannel = function (channel) {
+            this.channel = channel;
+        }
+        this.getVolume = function () {
+            return this.volume;
+        }
+        this.setVolume = function (volume) {
+            this.volume = volume;
+        }
+        this.connectRemote = function (r) {
+            this.channel = r.channel;
+            this.volume = r.volume;
+        }
+    }
+
+    alert("Mac dinh tivi");
+    let tivi = new Tivi(5,10);
+    let chanel1 = tivi.getChannel();
+    alert(chanel1);
+    let volume1 = tivi.getVolume();
+    alert(volume1);
+
+    alert("Remote mac dinh");
+    let remote = new Remote();
+    tivi.connectRemote(remote);
+    let chanel2 = tivi.getChannel();
+    alert(chanel2);
+    let volume2 = tivi.getVolume();
+    alert(volume2);
+
+    alert("Thay doi remote");
+    remote.setChannel(7);
+    remote.setVolume(12);
+    tivi.connectRemote(remote);
+    let chanel3 = tivi.getChannel();
+    alert(chanel3);
+    let volume3 = tivi.getVolume();
+    alert(volume3);
+
+
+
+</script>
+</body>
+</html>
